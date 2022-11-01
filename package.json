@@ -1,6 +1,6 @@
 {
   "name": "@vanilla-enhance/epromise",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "enhance vanilla Promise,provide practical methods",
   "type": "module",
   "source": "src/index.ts",
