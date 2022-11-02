@@ -8,7 +8,7 @@
 <hr/>
 
 <ul>
-	<li><a href="#Highlights">Highlights</a> </li>
+	<li><a href="#Highlights"><del>Highlights</del></a> </li>
 	<li><a href="#useage">Usage</a></li>
     <li><a href="#api">APIs</a>
     <dl>
@@ -20,17 +20,25 @@
 </ul>
 
 
-<h2 id="Highlights">Highlights</h3>
+[comment]: <> (<h2 id="Highlights">Highlights</h3>)
 
-<hr/>
-	<dl>
-        <dt><span style="color: #ffe4c4; ">all</span></dt>
-		<dd>
-            <ul>
-                <li>enable to resolve objects with values of promise.</li>
-            </ul>
-        </dd>
-	</dl>
+[comment]: <> (<hr/>)
+
+[comment]: <> (	<dl>)
+
+[comment]: <> (        <dt><span style="color: #ffe4c4; ">all</span></dt>)
+
+[comment]: <> (		<dd>)
+
+[comment]: <> (            <ul>)
+
+[comment]: <> (                <li>enable to resolve objects with values of promise.</li>)
+
+[comment]: <> (            </ul>)
+
+[comment]: <> (        </dd>)
+
+[comment]: <> (	</dl>)
 
 
 <h2 id="useage">Usage</h3>
