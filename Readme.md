@@ -47,7 +47,10 @@
 <h3 style="color: #ffe4c4;" id="static-all">all</h3>
 
 ```js
+//arg is object whose keys is of string and values is of promise.
 static async all<T>(inMap: Record<string, Promise<T>>): Promise<Record<string, T>>
+//arg is array whose all values are promises.    
+static async all<T>(inputMap: Promise<T>[]): Promise<T[]>
 ```
 
 <h5>for example:<h5/>
