@@ -1,6 +1,42 @@
 import {EPromise} from "../src";
 describe("EPromise",()=>{
     describe("static-all",()=>{
+        test("array-resolved",()=>{
+            return EPromise.all<string | number>([
+                new Promise(resolve=>{
+                    setTimeout(_=>{
+                        resolve('haha1')
+                    },3000)
+                }),
+                new Promise(resolve=>{
+                    setTimeout(_=>{
+                        resolve('haha2')
+                    },1000)
+                }),
+                Promise.resolve(3),
+            ])
+                .then(res=>{
+                    expect(res).toEqual(['haha1','haha2',3])
+                })
+        })
+        test("array-rejected",()=>{
+            return EPromise.all<string | number>([
+                new Promise((resolve,reject)=>{
+                    setTimeout(_=>{
+                        reject('haha1')
+                    },3000)
+                }),
+                new Promise((resolve,reject)=>{
+                    setTimeout(_=>{
+                        reject('haha2')
+                    },1000)
+                }),
+                Promise.resolve(3),
+            ])
+                .catch(res=>{
+                    expect(res).toBe('haha2')
+                })
+        })
     test("object-resolved",()=>{
         return  EPromise.all({
             one:new Promise(resolve=>{
@@ -23,24 +59,6 @@ describe("EPromise",()=>{
                 })
             })
     })
-        test("resolved-array",()=>{
-           return EPromise.all<string | number>([
-                new Promise(resolve=>{
-                    setTimeout(_=>{
-                        resolve('haha1')
-                    },3000)
-                }),
-                new Promise(resolve=>{
-                    setTimeout(_=>{
-                        resolve('haha2')
-                    },1000)
-                }),
-                Promise.resolve(3),
-            ])
-                .then(res=>{
-                    expect(res).toEqual(['haha1','haha2',3])
-                })
-        })
     test('object-rejected',()=>{
         expect(EPromise.all({
             one:new Promise(resolve=>{
@@ -138,6 +156,3 @@ describe("EPromise",()=>{
         })
     })
 })
-
-
-

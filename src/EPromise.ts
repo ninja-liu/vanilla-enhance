@@ -2,7 +2,7 @@
 class EPromise<T> extends Promise<T> {
     static async all<T>(inputMap: Record<string, Promise<T>>): Promise<Record<string, T>>
     static async all<T>(inputMap: Promise<T>[]): Promise<T[]>
-    static async all<T>(inputMap: Record<string, Promise<T>> | Promise<T>[]): Promise<Record<string, T> | T[]> {
+    static async all<T>(inputMap: any){
         if(Array.isArray(inputMap))
             return super.all<T>(inputMap)
         else
@@ -24,8 +24,7 @@ class EPromise<T> extends Promise<T> {
     }
     static async allSettled<T>(inputMap: Record<string, PromiseLike<T>>): Promise<Record<string,PromiseSettledResult<T>> | PromiseRejectedResult>
     static async allSettled<T>(inputMap: Iterable<PromiseLike<T>>): Promise<PromiseSettledResult<T>[] | PromiseRejectedResult>
-    static async allSettled<T>(inputMap: Record<string, PromiseLike<T>> | Iterable<PromiseLike<T>>) :
-        Promise<Record<string,PromiseSettledResult<T>> | PromiseSettledResult<T>[] | PromiseRejectedResult>{
+    static async allSettled<T>(inputMap: any) {
         if(Array.isArray(inputMap))
             return super.allSettled<T>(inputMap)
         else
